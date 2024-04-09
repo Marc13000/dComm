@@ -33,7 +33,7 @@ class SnifferBot:
 
         reply_markup = InlineKeyboardMarkup(keyboard)
     
-        await update.message.reply_text("Hi! Please select an option below.", reply_markup=reply_markup)
+        await update.message.reply_text("Hi! Select an option below to track the top bonk traders.", reply_markup=reply_markup)
 
     async def buttonResponse(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         #Parses the CallbackQuery and updates the message text
