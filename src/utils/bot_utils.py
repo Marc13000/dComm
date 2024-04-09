@@ -1,7 +1,9 @@
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.constants import ParseMode
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
 import os
+from data import format_data
 
 
 BOT_API_KEY = os.environ.get("API_KEY")
@@ -11,6 +13,10 @@ logging.basicConfig(
         level=logging.INFO)
     
 class SnifferBot:
+    def __init__(self, trader_data):
+        self.trader_data = trader_data
+
+
     async def start_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("View Top Traders:", callback_data="1")],
@@ -33,7 +39,22 @@ class SnifferBot:
         #Parses the CallbackQuery and updates the message text
         query = update.callback_query
         await query.answer()
-        await query.edit_message_text(text=f"Selected option: {query.data}")
+        if query.data == "2":
+            #24Hrs
+            message = format_data.format_table(self.trader_data, "24Hrs")
+            await query.edit_message_text(text=message, parse_mode=ParseMode.HTML)
+        if query.data == "3":
+            #24Hrs
+            message = format_data.format_table(self.trader_data, "3D")
+            await query.edit_message_text(text=message, parse_mode=ParseMode.HTML)
+        if query.data == "4":
+            #24Hrs
+            message = format_data.format_table(self.trader_data, "7D")
+            await query.edit_message_text(text=message, parse_mode=ParseMode.HTML)
+        if query.data == "5":
+            #24Hrs
+            message = format_data.format_table(self.trader_data, "1M")
+            await query.edit_message_text(text=message, parse_mode=ParseMode.HTML)
 
 
     
