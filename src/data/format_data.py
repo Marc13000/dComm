@@ -1,3 +1,11 @@
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    LinkPreviewOptions,
+    Update,
+    helpers,
+)
+
 def shorten_address(wallet_address):
     return f"{wallet_address[0:4]}...{wallet_address[-5:-1]}"
 
@@ -23,9 +31,10 @@ def format_table(data, time_period):
     for i, (wallet, (pnl, percentage_gain)) in enumerate(zip(shortened, stats), start=1):
         pnl_space = 12-len(pnl)
         if i>9:
-            body += f"{i}. {wallet}  {' '*count_lower(wallet)}{pnl}  {' '*(pnl_space)}{percentage_gain}\n"
+            
+            body += f'{i}. <code>{wallet}</code>{" "*count_lower(wallet)}{pnl}  {" "*(pnl_space)}{percentage_gain}\n'
         else:
-            body += f"{i}. {wallet}   {' '*count_lower(wallet)}{pnl}  {' '*(pnl_space)}{percentage_gain}\n"
+            body += f"{i}. <code>{wallet}</code>{' '*count_lower(wallet)}{pnl}  {' '*(pnl_space)}{percentage_gain}\n"
 
  
     
