@@ -1,9 +1,11 @@
-BonkSnifferBot: Real-Time Insights into Top Crypto Traders
+BonkSnifferBot - Real-Time Insights into Top Crypto Traders
 
 Overview
+
 This is a demo for our BonkSnifferBot, a pioneering Telegram bot that perfectly compliments the BonkBot Trading bot, offering degen traders real-time insights into the most profitable crypto traders from the past 24Hrs, 3Days, 7Days, 1Month etc. By leveraging live data, BonkSnifferBot enables users to track top traders' wallet activities and instantly replicate their trades through deep link integration with BonkBot. This seamless synergy empowers degens to not only speculate better but to execute on their speculations faster and with higher confidence. The Bot also lays the foundations for a rather novel innovation - onchain messaging in a completely wallet-native fashion. Current on-chain communication solutions require users on both endpoints to setup accounts and use external platforms. With our "BonkEm" feature, we display the vision of wallet-to-wallet messages, requiring no setup from already native tools, where traders can "Bonk" each other, sending a Bonk message to other traders' wallets which they can then burn to get BONK. Our vision is to one day integrate this messaging service with the key Solana wallet providers to achieve this vision. 
 
 Features
+
 Live Trader Rankings: Discover who the top traders are across various timeframes — 1 Day, 3 Days, 7 Days, and 1 Month.
 Wallet Tracking: Follow the activity of any top trader’s wallet to receive notifications on their latest transactions.
 Deep Link Trading: Receive notifications with deep links directly to BonkBot, allowing for instant execution of similar trades.
